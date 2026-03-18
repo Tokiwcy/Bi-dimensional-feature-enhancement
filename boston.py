@@ -294,7 +294,7 @@ def calculate_rmsle(y_true, y_pred, scale=1000.0):
 # 1) Load data
 # =========================
 print("\n1. 加载数据...")
-data_path = "boston_housing_dataset.csv"
+data_path = "data/boston_housing_dataset.csv"
 df = pd.read_csv(data_path)
     
 print(f"数据文件: {data_path}")

@@ -213,7 +213,7 @@ def calculate_mae(y_true, y_pred):
 # 1) Load data
 # =========================
 print("\n1. 加载数据...")
-data_path = "/mnt/data/melb_data.csv" if os.path.exists("/mnt/data/melb_data.csv") else "melb_data.csv"
+data_path = "data/melb_data.csv"
 df = pd.read_csv(data_path)
 print(f"数据文件: {data_path}")
 print(f"原始数据形状: {df.shape}")

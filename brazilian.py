@@ -231,7 +231,7 @@ def calculate_mae(y_true, y_pred):
 # 1) Load data
 # =========================
 print("\n1. 加载数据...")
-data_path = "brazilian_houses.arff"
+data_path = "data/brazilian_houses.arff"
 try:
     data, meta = arff.loadarff(data_path)
     df = pd.DataFrame(data)
@@ -1008,7 +1008,7 @@ def process_one_fold(df_full, train_sub_idx, es_idx, val_idx, fold_num):
                 y_pred_val = model.predict(Xes)
                 y_pred_test = model.predict(Xte)
             elif model_class == lgb.LGBMRegressor:
-                model = model_class(n_estimators=5000, max_depth=-1, num_leaves=127, learning_rate=0.15,
+                model = model_class(n_estimators=2313, max_depth=-1, num_leaves=127, learning_rate=0.1223132442345,
                                     subsample=0.9, colsample_bytree=0.9, min_child_samples=10,
                                     random_state=RANDOM_SEED, n_jobs=-1, verbose=-1)
                 model.fit(

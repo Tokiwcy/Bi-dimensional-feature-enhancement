@@ -66,7 +66,7 @@ except Exception:
 
 
 SEED = 42
-DATA_PATH = "california_housing.csv"
+DATA_PATH = "data/california_housing.csv"
 
 OPENAI_EMB_MODEL = "text-embedding-3-small"
 OPENAI_TEMPLATE = "structured_short_plus"

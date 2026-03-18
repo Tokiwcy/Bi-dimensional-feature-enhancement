@@ -38,7 +38,7 @@ except Exception:
 
 
 SEED = 42
-TRAIN_PATH = "train.csv"
+TRAIN_PATH = "data/train.csv"
 OUTPUT_PATH = "submission.csv"
 
 OPENAI_EMB_MODEL = "text-embedding-3-large"
