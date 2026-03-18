@@ -1,6 +1,6 @@
 # Bi-dimensional-feature-enhancement
 
-房价预测实验脚本集合，包含以下数据集与脚本：
+This repository contains house-price prediction experiment scripts and datasets:
 
 - `Ames.py`
 - `cal.py` (California Housing)
@@ -8,9 +8,9 @@
 - `melb.py` (Melbourne Housing)
 - `brazilian.py` (Brazilian Houses)
 
-## 项目结构
+## Project Structure
 
-- `data/`：所有数据文件
+- `data/`: all dataset files
   - `train.csv`
   - `test.csv`
   - `ground_truth.csv`
@@ -19,15 +19,15 @@
   - `melb_data.csv`
   - `brazilian_houses.arff`
 
-## 环境安装
+## Installation
 
-建议 Python `3.10+`，先创建虚拟环境，再安装依赖：
+Use Python `3.10+`. It is recommended to create a virtual environment first, then install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-如果你要使用 embedding 功能，还需要配置 OpenAI Key：
+If you want to use embedding features, configure your OpenAI API key:
 
 ```bash
 set OPENAI_API_KEY=your_api_key
@@ -39,7 +39,7 @@ Linux / macOS:
 export OPENAI_API_KEY=your_api_key
 ```
 
-## 运行示例
+## Quick Start
 
 ### Ames
 
@@ -73,8 +73,8 @@ python melb.py --mode all --seed 42
 python brazilian.py --mode all --seed 0,1,2,3,4
 ```
 
-## 说明
+## Notes
 
-- 当前脚本默认从 `data/` 目录读取数据。
-- 不同脚本参数略有差异，请使用 `python xxx.py --help` 查看完整参数。
-- `openai` 与 `tabpfn` 为可选依赖，未安装时对应功能会自动跳过。
+- Scripts default to reading datasets from the `data/` directory.
+- CLI options differ slightly across scripts. Use `python <script>.py --help` for full arguments.
+- `openai` and `tabpfn` are optional dependencies; related features are skipped if unavailable.
