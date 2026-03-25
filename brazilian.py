@@ -983,9 +983,9 @@ def process_one_fold(df_full, train_sub_idx, es_idx, val_idx, fold_num):
                     print(f"    TabPFN 使用 CPU 训练成功")
             elif model_class == xgb.XGBRegressor:
                 base_xgb_kwargs = dict(
-                    n_estimators=4962, max_depth=8, learning_rate=0.1834132512351,
-                    subsample=0.9, colsample_bytree=0.9,
-                    reg_alpha=0.0, reg_lambda=1.0,
+                    n_estimators=2490, max_depth=7, learning_rate=0.004470585911290235,
+                    subsample=0.638545829645582, colsample_bytree=0.7571073027679672,
+                    reg_alpha=0.7430118492927846, reg_lambda=9.511324756525557,
                     random_state=RANDOM_SEED, n_jobs=-1
                 )
                 model = model_class(**base_xgb_kwargs)
@@ -1008,8 +1008,9 @@ def process_one_fold(df_full, train_sub_idx, es_idx, val_idx, fold_num):
                 y_pred_val = model.predict(Xes)
                 y_pred_test = model.predict(Xte)
             elif model_class == lgb.LGBMRegressor:
-                model = model_class(n_estimators=2313, max_depth=-1, num_leaves=127, learning_rate=0.1223132442345,
-                                    subsample=0.9, colsample_bytree=0.9, min_child_samples=10,
+                model = model_class(n_estimators=4308, max_depth=-1, num_leaves=45, learning_rate=0.009833085780848847,
+                                    subsample=0.7408219872494901, colsample_bytree=0.6407900810374106, min_child_samples=10,
+                                    max_bin=108, bagging_freq=2,
                                     random_state=RANDOM_SEED, n_jobs=-1, verbose=-1)
                 model.fit(
                     Xtr, y_train,
@@ -1021,7 +1022,7 @@ def process_one_fold(df_full, train_sub_idx, es_idx, val_idx, fold_num):
                 y_pred_test = model.predict(Xte)
             elif model_class == cb.CatBoostRegressor:
                 model = model_class(
-                    iterations=5000, depth=8, learning_rate=0.15, l2_leaf_reg=1.0,
+                    iterations=1195, depth=7, learning_rate=0.04515232411240383, l2_leaf_reg=0.002590426934705988,
                     random_seed=RANDOM_SEED, verbose=False,
                     od_type="Iter", od_wait=60
                 )
